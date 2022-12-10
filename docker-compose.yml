@@ -14,7 +14,7 @@ services:
    container_name: laravel_app
    # コンテナとホスト側のディレクトリを同期する場所の指定。laravelのソースが入る予定の場所
    volumes:
-     - ./src:/var/www/html
+     - .:/var/www/html/
 
  # MySQLを動かすコンテナ
  db:
