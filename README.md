@@ -6,12 +6,15 @@
 laravel ディレクトリ配下にある、「.env.example」をコピペ、コピペしたファイルの名前を「.env」に変更。
 
 - laravel ディレクトリに移動
+
 `$cd laravel`
 
 - composer アップデート(インストール)
+
 `composer update`
 
 - Laravelプロジェクトに暗号化キーを設定
+
 `php artisan key:generate`
 
 ## docker 立ち上げ
