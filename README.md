@@ -1,4 +1,18 @@
-# docker立ち上げたらすぐにlaravel使える状態になってます
+# TOP表示までの手順
+## laravel の各種設定
+
+- .envファイルの作成
+
+laravel ディレクトリ配下にある、「.env.example」をコピペ、コピペしたファイルの名前を「.env」に変更。
+
+- laravel ディレクトリに移動
+`$cd laravel`
+
+- composer アップデート(インストール)
+`composer update`
+
+- Laravelプロジェクトに暗号化キーを設定
+`php artisan key:generate`
 
 ## docker 立ち上げ
 
@@ -8,7 +22,7 @@
 
 - コンテナ起動。完了後DockerDesktopを見に行ったらコンテナが立ち上がってる。
 
-`$ docker-compose up -d`]
+`$ docker-compose up -d`
 
 - コンテナ終了(削除ではなく電源OFF)
 
