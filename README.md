@@ -1,4 +1,8 @@
-# 手順
+# docker, laravel構築手順
+
+laravel ブランチでは laravel8 がインストール済なので、laravel インストールの手順を踏まなくても docker 立ち上げだけですぐに使えます。
+laravel のバージョンを変更したい場合などに、以下の手順の　laravel8　のバージョン指定を変えてください。
+
 ## docker 立ち上げ
 
 - 初期動作、コンテナを作る。結構時間がかかるけど終わるまで待つ。
@@ -9,27 +13,29 @@
 
 `$ docker-compose up -d`
 
-## laravel インストール
-
-- docker の app コンテナに侵入。ssh 的なノリ。
+- おまけ、docker の laravel_app コンテナに侵入する方法。ssh 的なノリ。
 
 `$ docker exec -it laravel_app bash`
 
-- laravel インストール
+## laravel インストール
 
-`xxx:/var/www/html $ composer create-project laravel/laravel:^8.* laravel`
+- laravel8 インストール
 
-- log ディレクトリ権限変更
-
-`xxx:/var/www/html $ chmod 777 /var/www/html/laravelapp/storage/logs/`
-
-- storage ディレクトリ権限変更
-
-`xxx:/var/www/html $ chmod -R guo+w /var/www/html/laravelapp/storage`
+`composer create-project laravel/laravel:^8.* laravel`
 
 - 以下にアクセスしたらlaravelのTOPページが表示される(はず)
 
 http://localhost:8000/
+
+## log 権限でこけたら以下も実行してください。
+
+- log ディレクトリ権限変更
+
+`chmod 777 laravel/storage/logs/`
+
+- storage ディレクトリ権限変更
+
+`xxx:/var/www/html $ chmod -R guo+w laravel/storage`
 
 ## Docker Compose とは
 
