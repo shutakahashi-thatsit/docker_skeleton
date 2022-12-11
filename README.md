@@ -1,6 +1,7 @@
 # docker, laravel構築手順
 
 laravel ブランチでは laravel8 がインストール済なので、laravel インストールの手順を踏まなくても docker 立ち上げだけですぐに使えます。
+
 laravel のバージョンを変更したい場合などに、以下の手順の　laravel8　のバージョン指定を変えてください。
 
 ## docker 立ち上げ
@@ -11,9 +12,14 @@ laravel のバージョンを変更したい場合などに、以下の手順の
 
 - コンテナ起動。完了後DockerDesktopを見に行ったらコンテナが立ち上がってる。
 
-`$ docker-compose up -d`
+`$ docker-compose up -d`]
 
-- おまけ、docker の laravel_app コンテナに侵入する方法。ssh 的なノリ。
+- コンテナ終了(削除ではなく電源OFF)
+
+`$ docker-compose stop`
+
+### おまけ
+- docker の laravel_app コンテナに侵入する方法。ssh 的なノリ。
 
 `$ docker exec -it laravel_app bash`
 
@@ -27,7 +33,7 @@ laravel のバージョンを変更したい場合などに、以下の手順の
 
 http://localhost:8000/
 
-## log 権限でこけたら以下も実行してください。
+### log 権限でこけたら以下も実行してください。
 
 - log ディレクトリ権限変更
 
